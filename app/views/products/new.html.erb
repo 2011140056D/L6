@@ -1,0 +1,12 @@
+
+<%= form_for @product, url:{action: :create} do |f| %>
+    <p>
+        <%= f.label :name, "商品名" %>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :price, "price" %>
+        <%= f.text_field :price %>
+    </p>
+    <%= f.submit "登録" %>
+<% end %>

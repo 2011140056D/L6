@@ -1,2 +1,12 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<% i=1 %>
+<% @products.each do |p| %>
+    <p>
+    商品<%= i %>(<%= p.name %>、<%= p.price %>)
+    <%= link_to "削除", "/products/#{p.id}" ,method: :delete %>
+    <%= link_to "カート追加", "/cart_items/new" %>
+    </p>
+    <% i += 1 %>
+<% end %>
+
+<p><%= link_to "商品を追加する", new_product_path %></p>
+<p><%= link_to "カートを見る","/carts/#{current_cart}" %></p>
